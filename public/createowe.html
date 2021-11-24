@@ -1,0 +1,88 @@
+<html lang="en"> 
+  <head>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <title>Create - Agrexa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script src="connect.js"></script>
+    <script src="js/create_owe.js"></script>
+  </head>
+  <body onload="on_load();">
+    <header>
+      <div class="topbar">
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="togBtn" onclick="change_lng()">
+            <div class="slider round"></div>
+          </label>
+        </div><!-- 
+      --><div>
+            <a href="index.html" class="topbar__site-name">Agrexa</a>
+            </div><!-- 
+          --><div>
+              <a href="signup.html" class="topbar__account" id='account'>Account</a>
+          </div>
+      </div>
+    </header>
+    <main>
+      <div class="pagebar">
+        <h1 id="exp_h">Add an expence
+      </div>
+      <form class="create-form" id="create-form">
+        <div class="create-form__line-container">
+            <label id="event_label">Event:</label>
+            <input type="text" name="event" id="event">
+        </div>
+        <div class="create-form__line-container">
+          <label id="category_label">Category:</label>
+          <select name="category" id="category">
+            <option id="category_1">Entertaiment</option>
+            <option id="category_2">Food and drink</option>
+            <option id="category_3">Home</option>
+            <option id="category_4">Life</option>
+            <option id="category_5">Utility</option>
+            <option id="category_6">Others</option>
+          </select>
+        </div>
+        <div class="create-form__line-container">
+            <label id="check_amount_label">Check amount:</label>
+            <input type="number" name="amount" id="amount">
+        </div>
+        <div class="create-form__line-container">
+            <label id="photo_label">Photo(opt.):</label>
+            <input type="file" name="files[]" id="photo" accept=".jpg,.jpeg,.png">
+        </div>
+        <div class="create-form__line-container">
+            <label id="method_label">Split method:</label>
+            <select name="method" id="method" onchange="paid_method()">
+              <option id="method_1">Amounts</option>
+              <option id="method_2">Equal</option>
+            </select>
+        </div>
+        <div class="create-form__line-container">
+          <button name="addition" id="addition" onclick="add_input();return false;">Add</button>
+          <button name="delete" id="delete" onclick="delete_input();return false;">Delete</button>
+        </div>
+        <div class="create-form__line-container">
+          <input name="user_name" value="Me" readonly id="me_field">
+          <label>-</label>
+          <input name="user_amount" type="number">
+        </div>
+        <div class="create-form__line-container">
+          <input list="friends1" name="user_name" autocomplete="off"/>
+          <datalist id="friends1" name="user_datalist">
+          </datalist>
+          <label>-</label>
+          <input name="user_amount" type="number">
+        </div>
+        <button onclick="save_owe();return false;" id="saveBtn">Save</button>
+      </form>
+    </main>
+    <footer>
+      <h3>Khatskevich, 2021
+    </footer>
+  </body>
+</html>

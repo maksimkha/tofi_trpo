@@ -1,0 +1,84 @@
+<html lang="en"> 
+  <head>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+    <title>Main - Agrexa</title>
+    <style>
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="connect.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body onload="on_load();">
+    <header>
+      <div id="div1"></div>
+      <div class="topbar">
+        <div>
+          <label class="switch">
+            <input type="checkbox" id="togBtn" onclick="change_lng()">
+            <div class="slider round"></div>
+          </label>
+        </div><!-- 
+        --><div>
+              <a href="index.html" class="topbar__site-name" id="site_name">Agrexa</a>
+            </div><!-- 
+          --><div>
+              <a href="signup.html" class="topbar__account" id='account'>Account</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="dashboard">
+        <div>
+        </div><!-- 
+        --><div>
+          <label id="dashboard">Dashboard</label>
+        </div><!-- 
+        --><div>
+          <form>
+            <button formaction="createowe.html" id="create_owe">Create owe</button>
+          </form>
+        </div>
+      </div>
+      <div class="oweboard">
+        <div>
+          <span><label id="you_label">You owe: </label></span>
+          <span><label id="plus_label"></label></span>
+        </div><!-- 
+        --><div>
+          <span><label id="total_owe_label">Total balance: </label></span>
+          <span><label id="total_label"></label></span>
+        </div><!-- 
+        --><div>
+          <span><label id="you_are_label">You are owed: </label></span>
+          <span><label id="minus_label"></label></span>
+        </div>
+      </div>
+      <div class="oweboard__container">
+        <label id="you_list">You owe: </label>
+        <label id="you_are_list">You are owed: </label>
+      </div>
+      <div class="oweboard__container">
+        <div class="oweboard__container-item">
+          <ol id="minus_list">
+          </ol>
+        </div>
+        <div class="oweboard__container-item">
+          <ol id="plus_list">
+          </ol>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <button id="pending_owes">Pending owes</button>
+      </div><div>
+        <h3>Khatskevich, 2021
+      </div><div>
+        <button id="friends">Friends</button>
+      </div>
+    </footer>
+  </body>
+</html>
